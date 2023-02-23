@@ -10,42 +10,47 @@ import jakarta.persistence.Table;
 @Table(name="Student")
 public class Student {
 	@Id
-	@Column(name="ID")
-	private int id;
+	@Column(name = "ID")
+	@GeneratedValue
+	int id;
+	@Column(name = "STDNAME")
+	String studentName;
 	
-	@Column(name="NAME")
-	private String name;
+	@Column(name = "DEPTNAME")
+	String departmentName;
 	
-	@Column(name="MARKS")
-	private int marks;
+	@Column(name = "MAIL")
+	String mailid;
 	
+	public Student(int id, String studentName, String departmentName, String mailid) {
+		super();
+		this.id = id;
+		this.studentName = studentName;
+		this.departmentName = departmentName;
+		this.mailid = mailid;
+	}
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	public String getStudentName() {
+		return studentName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
 	}
-	public int getMarks() {
-		return marks;
+	public String getDepartmentName() {
+		return departmentName;
 	}
-	public void setMarks(int marks) {
-		this.marks = marks;
+	public void setDepartmentName(String departmentName) {
+		this.departmentName = departmentName;
 	}
-	public Student(int id, String name, int marks) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.marks = marks;
+	public String getMailid() {
+		return mailid;
 	}
-
-	public Student()
-	{
-		
+	public void setMailid(String mailid) {
+		this.mailid = mailid;
 	}
 }
